@@ -8,7 +8,12 @@ import (
 
 func newRouter() *mux.Router {
   router := mux.NewRouter()
-  router.HandleFunc("/index", handler).Methods("GET")
+  router.HandleFunc("/", handler).Methods("GET")
+
+  staticFileDirectory := http.Dir("./assets/")
+  staticFileHandler := http.StripPrefix("/assets/", http.FileServer(staticFileDirectory))
+  router.PathPrefix("/assets").Handler(staticFileHandler).Methods("GET")
+
   return router
 }
 

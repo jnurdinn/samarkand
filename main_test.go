@@ -6,6 +6,7 @@ import (
   "net/http"
   "net/http/httptest"
   "testing"
+  "io/ioutil"
 )
 
 //function for testing handler
@@ -35,7 +36,7 @@ func TestRouter(t *testing.T){
   router := newRouter()
   mockServer := httptest.NewServer(router)
 
-  resp, err := http.Get(mockServer.URL + "/index")
+  resp, err := http.Get(mockServer.URL + "/")
   if err != nil {
     t.Fatal(err)
   }
@@ -55,4 +56,34 @@ func TestRouter(t *testing.T){
   if respString != expected {
     t.Errorf("Response should be %s, got %s", expected, respString)
   }
+}
+
+func TestRouterForNonExistentRoute(t *testing.T) {
+	router := newRouter()
+	mockServer := httptest.NewServer(router)
+	resp, err := http.Post(mockServer.URL+"/", "", nil)
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	// We want our status to be 405 (method not allowed)
+	if resp.StatusCode != http.StatusMethodNotAllowed {
+		t.Errorf("Status should be 405, got %d", resp.StatusCode)
+	}
+
+	// The code to test the body is also mostly the same, except this time, we
+	// expect an empty body
+	defer resp.Body.Close()
+	b, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		t.Fatal(err)
+	}
+	respString := string(b)
+	expected := ""
+
+	if respString != expected {
+		t.Errorf("Response should be %s, got %s", expected, respString)
+	}
+
 }
