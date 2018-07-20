@@ -6,17 +6,17 @@ import (
   "github.com/gorilla/mux"
 )
 
-func main(){
-  //initiate new router
+func newRouter() *mux.Router {
   router := mux.NewRouter()
-
-  //declare method where path is valid
   router.HandleFunc("/index", handler).Methods("GET")
+  return router
+}
 
-  //pass router after declaring routes, port 8080
+func main(){
+  router := newRouter()
   http.ListenAndServe(":8080", router)
 }
 
-func handler(w http.ResponseWriter, r *http.Request){
+func handler(w http.ResponseWriter, router *http.Request){
   fmt.Fprintf(w, "SAMARKAND:8080")
 }
