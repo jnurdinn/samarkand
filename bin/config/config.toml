@@ -1,0 +1,5 @@
+# Welcome to Samarkand Conf
+
+Enable = true
+Port = 8080
+Dir = "assets"
