@@ -9,7 +9,6 @@ import (
   "io/ioutil"
 )
 
-//function for testing handler
 func TestHandler(t *testing.T){
   req, err := http.NewRequest("GET", "", nil)
   if err != nil {
@@ -67,13 +66,10 @@ func TestRouterForNonExistentRoute(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	// We want our status to be 405 (method not allowed)
 	if resp.StatusCode != http.StatusMethodNotAllowed {
 		t.Errorf("Status should be 405, got %d", resp.StatusCode)
 	}
 
-	// The code to test the body is also mostly the same, except this time, we
-	// expect an empty body
 	defer resp.Body.Close()
 	b, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
