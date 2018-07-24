@@ -6,7 +6,7 @@ All you have to do is run the setup.sh script and let the magic happen.
 
 ## Configuration :
 Configuration can be accessed in :`/etc/samarkand/config.toml` <br>
-There are two things you can configure, port and webpage directory. Default port is 80 and default directory is `/var/www/html`
+There are two things you can configure, port and webpage directory, which either is self explanatory. Default port is 80 and default directory is `/var/www/html`
 
 ## Uninstall :
 To uninstall, just run the uninstall.sh script.
