@@ -1,15 +1,15 @@
 # samarkand
-Basic Web Server Written in GoLang. Because it's my first shot on this language, don't expect much out of it.
+Basic Web Server Written in GoLang. Pretty much a lightweight pseudo alternative to NGINX and Apache. Because it's my first shot on this language, don't expect much out of it.
 
-## Installation :
+### Installation :
 All you have to do is run the setup.sh script and let the magic happen.
 
-## Configuration :
-Configuration can be accessed in :`/etc/samarkand/config.toml` <br>
-There are two things you can configure, port and webpage directory, which either is self explanatory. Default port is 80 and default directory is `/var/www/html`
+### Configuration :
+Configuration can be accessed in :<br>`/etc/samarkand/config.toml` <br>
+There are two things you can configure, port and webpage directory, which either is self explanatory. Default port is 80 and default directory is : `/var/www/html`
 
-## Uninstall :
-To uninstall, just run the uninstall.sh script.
+### Uninstall :
+I know some of you may get tired because of my program, so I've also made an exit. To uninstall, just run the uninstall.sh script.
 
 ### Sources & Libraries :
 GoLang Web Application Tutorial by Soham Kamani<br>
