@@ -1,5 +1,5 @@
 # Welcome to Samarkand Conf
 
 Enable = true
-Port = 8080
+Port = 80
 Dir = "/var/www/html/"
