@@ -24,7 +24,7 @@ func newRouter(dir string) *mux.Router {
 
 func main(){
   var conf Config
-  if _, err := toml.DecodeFile("./config/config.toml", &conf); err != nil {
+  if _, err := toml.DecodeFile("/etc/samarkand/config.toml", &conf); err != nil {
     fmt.Println(err)
   }
   if (conf.Enable){

@@ -1,5 +1,4 @@
 # samarkand
-
 Basic Web Server Written in GoLang. Developed for learning purposes only, so don't expect much out of it.
 
 ## Sources & Libraries :
@@ -9,4 +8,3 @@ URL Router and Dispatcher by Gorilla<br>
 `https://github.com/gorilla/mux`<br>
 TOML Parser by BurntSushi<br>
 `https://github.com/BurntSushi/toml`<br>
-
