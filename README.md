@@ -2,7 +2,7 @@
 Basic Web Server Written in GoLang. Pretty much a lightweight pseudo alternative to NGINX and Apache. Because it's my first shot on this language, don't expect much out of it.
 
 ### Installation :
-All you have to do is run the setup.sh script and let the magic happen.
+All you have to do is run the install.sh script and let the magic happen.
 
 ### Configuration :
 Configuration can be accessed in :<br>`/etc/samarkand/config.toml` <br>
