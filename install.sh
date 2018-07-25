@@ -34,6 +34,7 @@ else
     fi
 
     systemctl start samarkand
+    systemctl enable samarkand
     echo "Success!"
     echo "Don't forget to config on /etc/samarkand/config.toml"
   else
